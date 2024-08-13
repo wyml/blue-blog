@@ -1,0 +1,39 @@
+<?php
+
+namespace App\Livewire\Article;
+
+use App\Models\Article;
+use Livewire\Component;
+
+class Edit extends Component
+{
+    public $id;
+    public $title = '';
+    public $content = '';
+    public $article;
+
+    public function mount($id)
+    {
+        $this->id = $id;
+        $this->article = Article::find($id);
+        $this->title = $this->article->title;
+        $this->content = $this->article->content;
+    }
+
+    public function save()
+    {
+        $this->article
+            ->title = $this->title;
+        $this->article
+            ->content = $this->content;
+        $this->article->save();
+
+        session()->flash('status', '更新成功！');
+        return $this->redirect('/article');
+    }
+
+    public function render()
+    {
+        return view('livewire.article.edit');
+    }
+}

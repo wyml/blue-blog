@@ -7,6 +7,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', \App\Livewire\Home::class)
     ->name('home');
 
+Route::get('/article/{id}', \App\Livewire\Article\Info::class)
+    ->name('article.info');
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -22,6 +25,4 @@ Route::middleware([
         ->name('article.create');
     Route::get('/article/{id}/edit', \App\Livewire\Article\Edit::class)
         ->name('article.edit');
-    Route::get('/article/{id}', \App\Livewire\Article\Info::class)
-        ->name('article.info');
 });

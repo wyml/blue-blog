@@ -12,7 +12,7 @@
 
     <div class="container mx-auto" style="margin-top: 12px;">
         <div class="p-10 bg-white shadow-xl shadow-indigo-300/10">
-            <div class="line-clamp-3 text-[#93a2ce]">
+            <div class="text-[#93a2ce] prose">
                 {!! $article->content !!}
             </div>
         </div>

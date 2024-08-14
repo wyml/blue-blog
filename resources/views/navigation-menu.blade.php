@@ -18,6 +18,9 @@
                     <x-nav-link href="{{ route('article') }}" :active="request()->routeIs('article')">
                         {{ __('Article') }}
                     </x-nav-link>
+                    <x-nav-link href="{{ route('home') }}" :active="request()->routeIs('home')">
+                        返回站点
+                    </x-nav-link>
                 </div>
             </div>
 

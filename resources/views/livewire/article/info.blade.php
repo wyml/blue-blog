@@ -16,5 +16,8 @@
                 {!! $article->content !!}
             </div>
         </div>
+
+        <x-chat :id="$article->id"></x-chat>
     </div>
+
 </div>

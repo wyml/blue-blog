@@ -14,7 +14,7 @@
 
             <div class="flex justify-between gap-2">
                 <label for="content">内容</label>
-                <textarea class="flex-1 rounded border-2" rows="15" name="content" id="content" wire:model="content"></textarea>
+                <div class="flex-1 rounded border-2" rows="15" name="content" id="markdown-container"></div>
             </div>
 
 
@@ -24,3 +24,22 @@
         </form>
     </div>
 </div>
+
+@assets
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cherry-markdown@0.8.46/dist/cherry-markdown.min.css" integrity="sha256-gZuP4O9MLsU4nvtnUuOY9hRSWZcTXq0v0qNq2/dVFQQ=" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/cherry-markdown@0.8.46/dist/cherry-markdown.min.js" integrity="sha256-5zlqB0Ul0L4WlqnWOX+bJePEBPGWwIguyur+hrY7KHE=" crossorigin="anonymous"></script>
+@endassets
+
+@script
+<script>
+    new Cherry({
+        id: 'markdown-container',
+        value: '',
+        callback: {
+            afterChange: function(md, html) {
+                $wire.content = md;
+            }
+        }
+    });
+</script>
+@endscript

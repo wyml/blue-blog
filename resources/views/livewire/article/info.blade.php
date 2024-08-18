@@ -17,7 +17,7 @@
             </div>
         </div>
 
-        <x-chat :id="$article->id"></x-chat>
+        <!-- <x-chat :id="$article->id"></x-chat> -->
     </div>
 
 </div>

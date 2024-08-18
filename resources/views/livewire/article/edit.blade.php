@@ -30,11 +30,29 @@
 <script src="https://cdn.jsdelivr.net/npm/cherry-markdown@0.8.46/dist/cherry-markdown.min.js" integrity="sha256-5zlqB0Ul0L4WlqnWOX+bJePEBPGWwIguyur+hrY7KHE=" crossorigin="anonymous"></script>
 @endassets
 
+<script>
+    function fileUploadFunc(file, callback) {
+        const formData = new FormData();
+        formData.append('file', file);
+        formData.append('_token', '{{ csrf_token() }}');
+
+        fetch("{{ route('fileupload') }}", {
+                method: 'POST',
+                body: formData
+            }).then(res => res.json())
+            .then((json) => {
+                console.log(json)
+                callback(json.url)
+            })
+    }
+</script>
+
 @script
 <script>
     new Cherry({
         id: 'markdown-container',
         value: $wire.content,
+        fileUpload: fileUploadFunc,
         callback: {
             afterChange: function(md, html) {
                 $wire.content = md;

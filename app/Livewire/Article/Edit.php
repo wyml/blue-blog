@@ -4,6 +4,7 @@ namespace App\Livewire\Article;
 
 use App\Models\Article;
 use Livewire\Component;
+use Livewire\Attributes\Title;
 
 class Edit extends Component
 {
@@ -32,6 +33,7 @@ class Edit extends Component
         return $this->redirect('/article');
     }
 
+    #[title('编辑文章')]
     public function render()
     {
         return view('livewire.article.edit');

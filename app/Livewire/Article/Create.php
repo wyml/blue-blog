@@ -5,6 +5,7 @@ namespace App\Livewire\Article;
 use App\Models\Article;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use Livewire\Attributes\Title;
 
 class Create extends Component
 {
@@ -22,6 +23,7 @@ class Create extends Component
         return $this->redirect('/article');
     }
 
+    #[title('创建文章')]
     public function render()
     {
         return view('livewire.article.create');

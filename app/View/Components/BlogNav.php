@@ -21,6 +21,8 @@ class BlogNav extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.blog-nav');
+        return view('components.blog-nav',[
+            'pageList' => \App\Models\Page::all()
+        ]);
     }
 }

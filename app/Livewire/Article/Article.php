@@ -5,6 +5,7 @@ namespace App\Livewire\Article;
 use App\Models\Article as ModelsArticle;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Livewire\Attributes\Title;
 
 class Article extends Component
 {
@@ -14,6 +15,7 @@ class Article extends Component
 
     public $header = '文章';
 
+    #[title('文章管理')]
     public function render()
     {
         return view('livewire.article.article', [

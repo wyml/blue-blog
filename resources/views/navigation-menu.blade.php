@@ -18,6 +18,12 @@
                     <x-nav-link href="{{ route('article') }}" :active="request()->routeIs('article')">
                         {{ __('Article') }}
                     </x-nav-link>
+                    <x-nav-link href="{{ route('pages') }}" :active="request()->routeIs('pages')">
+                        {{ __('Page') }}
+                    </x-nav-link>
+                    <x-nav-link href="{{ route('settings') }}" :active="request()->routeIs('settings')">
+                        {{ __('Settings') }}
+                    </x-nav-link>
                     <x-nav-link href="{{ route('home') }}" :active="request()->routeIs('home')">
                         返回站点
                     </x-nav-link>

@@ -5,14 +5,18 @@
         </div>
         <div>
             <ul class="list-none flex gap-4 text-indigo-300 ">
-                <li @class([
-                    'text-indigo-600'=> Route::currentRouteName() == 'home'
-                    ]) class="hover:text-indigo-600">
-                    <a  href="{{route('home')}}">首页</a>
+                <li @class([ 'text-indigo-600'=> Route::currentRouteName() == 'home'
+                    ,'hover:text-indigo-600'])>
+                    <a href="{{route('home')}}">首页</a>
                 </li>
-                <li class="hover:text-indigo-600">
+                <li @class(['hover:text-indigo-600'])>
                     <a href="{{route('article')}}">归档</a>
                 </li>
+                @foreach ($pageList as $page)
+                <li @class(['text-indigo-600'=>request()->routeIs('pages.info'),'hover:text-indigo-600']) >
+                    <a href="{{route('pages.info',['slug'=>$page->slug])}}">{{$page->title}}</a>
+                </li>
+                @endforeach
                 @auth
                 <li class="hover:text-indigo-600">
                     <a href="{{route('dashboard')}}">{{ __('Dashboard') }}</a>

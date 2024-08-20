@@ -4,7 +4,7 @@
 
     <div class="container mx-auto lg:w-1/2 space-y-2" style="margin-top: 12px;">
         @foreach ($articleList as $article)
-        <div class="p-10 bg-white rounded-lg hover:shadow">
+        <div class="p-10 bg-white hover:shadow">
             <div class="font-black text-2xl leading-11 text-indigo-600">
                 <a href="{{route('article.info',['id'=>$article->id])}}">{{ $article->title }}</a>
             </div>

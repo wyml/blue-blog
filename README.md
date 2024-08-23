@@ -2,9 +2,9 @@
 a simple blog system, powerful and easy to use.
 
 <p align="center">
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/github/last-commit/wyml/blue-blog
+<a href="https://github.com/wyml/blue-blog"><img src="https://img.shields.io/github/last-commit/wyml/blue-blog
 " alt="Last Commit"></a>
-<a><img src="https://img.shields.io/github/commit-activity/w/wyml/blue-blog
+<a href="https://github.com/wyml/blue-blog"><img src="https://img.shields.io/github/commit-activity/w/wyml/blue-blog
 " alt="Commit Activity" /></a>
 </p>
 

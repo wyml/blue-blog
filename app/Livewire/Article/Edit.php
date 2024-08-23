@@ -32,7 +32,7 @@ class Edit extends Component
         $this->article->save();
 
         session()->flash('status', '更新成功！');
-        return $this->redirect('/article');
+        return $this->redirect('/admin/article');
     }
 
     #[title('编辑文章')]

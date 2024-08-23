@@ -11,10 +11,8 @@
 
     <div class="container mx-auto lg:w-1/2 space-y-2" style="margin-top: 12px;">
 
-
         @foreach ($articleList as $article)
-
-        @if ($article->type == 0)
+        @if ($article->type == '文章')
         <div class="p-10 bg-white hover:shadow">
             <div class="font-black text-2xl leading-11 text-indigo-600">
                 <a href="{{route('article.info',['id'=>$article->id])}}">{{ $article->title }}</a>
@@ -26,7 +24,7 @@
                 {{ $article->content }}
             </div>
         </div>
-        @elseif ($article->type == 1)
+        @elseif ($article->type == '随心贴')
         <div class="p-10 bg-indigo-200/50 hover:shadow text-lg space-y-4">
             <div class="text-sm text-gray-500">随心贴</div>
             <div>{!! markdown2html($article->content) !!}</div>

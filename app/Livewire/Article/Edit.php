@@ -11,6 +11,7 @@ class Edit extends Component
     public $id;
     public $title = '';
     public $content = '';
+    public $type = 0;
     public $article;
 
     public function mount($id)
@@ -19,6 +20,7 @@ class Edit extends Component
         $this->article = Article::find($id);
         $this->title = $this->article->title;
         $this->content = $this->article->content;
+        $this->type = $this->article->type;
     }
 
     public function save()

@@ -17,6 +17,13 @@
                 <div class="flex-1 rounded border-2" rows="15" name="content" id="markdown-container"></div>
             </div>
 
+            <div class="flex justify-start items-center gap-2">
+                <label for="type">类型</label>
+                <select name="type" class="w-full border-2 rounded flex-1" id="type" wire:model="type">
+                    <option value="0">文章</option>
+                    <option value="1">随心贴</option>
+                </select>
+            </div>
 
             <div class="flex justify-end">
                 <button class="py-2 px-4 text-white rounded bg-indigo-600" type="submit">{{ __('actions.submit') }}</button>

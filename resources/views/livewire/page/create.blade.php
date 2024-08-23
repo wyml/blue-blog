@@ -22,7 +22,6 @@
                 <div class="flex-1 rounded border-2" rows="15" name="content" id="markdown-container"></div>
             </div>
 
-
             <div class="flex justify-end">
                 <button class="py-2 px-4 text-white rounded bg-indigo-600" type="submit">{{ __('actions.submit') }}</button>
             </div>

@@ -17,6 +17,7 @@
                     <tr>
                         <th class="w-10% p-4 font-bold text-center">序号</th>
                         <th class="p-4 font-bold">标题</th>
+                        <th class="p-4 font-bold">类型</th>
                         <th class="p-4 font-bold text-right">发表时间</th>
                         <th class="p-4 font-bold">操作</th>
                     </tr>
@@ -26,6 +27,7 @@
                     <tr class="hover:bg-gray-100">
                         <td class="p-4 text-gray-600 text-center">{{ $article->id }}</td>
                         <td class="p-4 text-gray-600">{{ $article->title }}</td>
+                        <td class="p-4 text-gray-600">{{ $article->type }}</td>
                         <td class="p-4 text-gray-600 text-right">{{ $article->created_at }}</td>
                         <td class="p-4 text-gray-600 text-left">
                             <div class="flex justify-start items-center gap-2 w-full">

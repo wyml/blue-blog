@@ -7,6 +7,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', \App\Livewire\Home::class)
     ->name('home');
 
+Route::post('/upload/file', \App\Http\Controllers\File::class . '@upload')
+    ->name('fileupload')
+    ->middleware([
+        'auth:sanctum',
+        config('jetstream.auth_session'),
+        'verified',
+    ]);
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

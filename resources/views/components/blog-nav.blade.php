@@ -1,7 +1,10 @@
 <nav style="height: 100px;" class="bg-white w-full flex items-center">
     <div class="container mx-auto text-indigo-600 font-bold flex justify-between items-center">
         <div>
-            <a href="{{route('home')}}">LandonBlue</a>
+            <a href="{{route('home')}}" class="flex items-center gap-2">
+                <img src="/logo.png" class="w-12 h-12 rotateOnHover" alt="LOGO">
+                LandonBlue
+            </a>
         </div>
         <div>
             <ul class="list-none flex gap-4 text-indigo-300 ">

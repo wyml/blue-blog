@@ -5,3 +5,49 @@
 [x-cloak] {
     display: none;
 }
+
+/* 定义旋转动画 */
+@keyframes spinFastSlowFast {
+    0%, 100% {
+        transform: rotate(0deg);
+        animation-timing-function: ease-in; /* 加速 */
+    }
+    25% {
+        transform: rotate(90deg);
+        animation-timing-function: ease-out; /* 减速 */
+    }
+    50% {
+        transform: rotate(180deg);
+        animation-timing-function: ease-in; /* 加速 */
+    }
+    75% {
+        transform: rotate(270deg);
+        animation-timing-function: ease-out; /* 减速 */
+    }
+}
+
+.rotateOnHover {
+    transition: all 0.1s ease-in-out;
+}
+
+.rotateOnHover:hover {
+    animation: spinFastSlowFast 1s cubic-bezier(0.75, 0, 0.25, 1) infinite;
+}
+
+/* 在全局样式文件中添加 */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-in {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+  }

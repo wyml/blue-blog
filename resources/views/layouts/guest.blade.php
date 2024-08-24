@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ $title ?? config('app.name', 'Laravel') }}</title>
+    <title>{{ isset($title) ? $title.' - '.config('app.name', 'Laravel') : config('app.name', 'Laravel') }}</title>
+
+    <meta name="description" content="一个教书匠的自媒体平台">
+    <meta name="keywords" content="BLOG,LandonBLUE,Jiabin">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -26,7 +29,7 @@
 </head>
 
 <body class="flex flex-col  min-h-screen">
-    <div class="flex-1 font-sans text-gray-900 antialiased">
+    <div class="flex-1 font-sans text-gray-900 antialiased fade-in">
         {{ $slot }}
     </div>
 

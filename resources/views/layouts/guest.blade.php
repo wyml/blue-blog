@@ -8,7 +8,7 @@
 
     <title>{{ isset($title) ? $title.' - '.config('app.name', 'Laravel') : config('app.name', 'Laravel') }}</title>
 
-    <meta name="description" content="一个教书匠的自媒体平台">
+    <meta name="description" content="{{ $description ?? '一个教书匠的自媒体平台' }}">
     <meta name="keywords" content="BLOG,LandonBLUE,Jiabin">
 
     <!-- Fonts -->

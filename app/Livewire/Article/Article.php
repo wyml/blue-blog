@@ -19,7 +19,7 @@ class Article extends Component
     public function render()
     {
         return view('livewire.article.article', [
-            'posts' => ModelsArticle::paginate(10)
+            'posts' => ModelsArticle::latest()->paginate(10)
         ]);
     }
 
